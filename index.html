@@ -3,728 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start.</title>
-    <meta name="description" content="">
-            
-    <!-- Facebook Meta Tags -->
+    <title>Start something.</title>
+    <meta name="description" content="A collection of handy links for browsing the net.">
+
+    <!-- Meta Tags -->
     <meta property="og:title" content="Start something today.">
     <meta property="og:description" content="A collection of handy links for browsing the net.">
     <meta property="og:image" content="https://timnetworks.net/img/og.jpg">
     <meta property="og:url" content="https://timnetworks.net">
     <meta property="og:site_name" content="timnetworks.net">
     <meta property="og:type" content="website">
-            
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Start.">
     <meta name="twitter:description" content="A collection of handy links for browsing the net.">
     <meta name="twitter:image" content="https://timnetworks.net/img/og.jpg">
 
-    <style>
-        :root {
-            --primary-color: #6a4cff;
-            --secondary-color: #ff6b6b;
-            --tertiary-color: #4ecca3;
-            --background-color: #f9f7ff;
-            --text-color: #333;
-            --shadow-color: rgba(0, 0, 0, 0.2);
-            --card-background: rgba(255, 255, 255, 0.85);
-            --category-general: #6a4cff;
-            --category-news: #ff6b6b;
-            --category-media: #4ecca3;
-            --category-utility: #ffcc5c;
-        }
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favi_lg.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favi_sm.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favi_sm.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="icon" href="./img/favi_lg.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="./img/favi_lg.svg">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Chalkboard SE', 'Marker Felt', sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: url('./img/wallpaper.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-        }
-
-        .menu-selector {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            z-index: 100;
-            display: flex;
-            gap: 10px;
-        }
-
-        /* Dropdown Menu Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: var(--card-background);
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 var(--shadow-color);
-            border-radius: 12px;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .dropdown-content a {
-            color: var(--text-color);
-            padding: 6px 8px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(106, 76, 255, 0.1);
-        }
-
-        .dropdown-content .close-btn {
-            border-top: 1px solid #eee;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .show {
-            display: block;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 256px;
-            margin: 0 auto;
-            display: block;
-            filter: drop-shadow(0 10px 10px var(--shadow-color));
-            border-radius: 20px;
-            transform: rotate(0deg);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 0 var(--shadow-color);
-            transform: rotate(0deg);
-            color: var(--primary-color);
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .category {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 20px var(--shadow-color);
-            position: relative;
-            overflow: hidden;
-            transform: rotate(0deg);
-            transition: transform 0.3s ease;
-        }
-
-        .category:nth-child(even) {
-            transform: rotate(0deg);
-        }
-
-        .category:hover {
-            transform: scale(1.03) rotate(0);
-        }
-
-        .category::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .category.general::before {
-            background: var(--category-general);
-        }
-
-        .category.news::before {
-            background: var(--category-news);
-        }
-
-        .category.media::before {
-            background: var(--category-media);
-        }
-
-        .category.utility::before {
-            background: var(--category-utility);
-        }
-
-        .category h2 {
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.8rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .category h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 25%;
-            width: 50%;
-            height: 3px;
-        }
-
-        .links {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 15px;
-        }
-
-        .link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-color);
-            transition: transform 0.3s ease;
-        }
-
-        .link:hover {
-            transform: scale(1.1) translateY(-4px);
-        }
-
-        .link-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 8px;
-            box-shadow: 0 4px 8px var(--shadow-color);
-            border: 3px solid white;
-            transition: transform 0.3s ease;
-        }
-
-        .link-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .link-title {
-            font-size: 0.8rem;
-            text-align: center;
-            max-width: 80px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .search-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-right: 12px;
-            box-shadow: 0 4px 8px var(--shadow-color);
-            border: 3px solid white;
-            transition: transform 0.3s ease;
-        }
-
-        .search-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .clock {
-            font-family: 'Chalkboard SE', 'Marker Felt', sans-serif;
-            font-size: 2rem; 
-            background: rgba(255, 255, 255, 0.85);
-            padding: 10px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            margin: 10px;
-        }
-
-        .quote {
-            font-family: 'Chalkboard SE', 'Marker Felt', sans-serif;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 15px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            margin: 10px;
-            max-width: 600px;
-        }
-
-        .searchbar {
-            text-align: center;
-            font-size: 0.9rem;
-            background: var(--card-background);
-            border-radius: 20px;
-            box-shadow: 0 5px 15px var(--shadow-color);
-            transform: rotate(0deg);
-        }
-
-        /* Google Search Bar Styles */
-        .search-container {
-            text-align: center;
-            padding: 20px;
-            margin-left: 20%;
-            margin-right: 20%;
-            margin-bottom: 16px;
-            margin-top: 16px;
-            background: var(--card-background);
-            border-radius: 20px;
-            box-shadow: 0 5px 15px var(--shadow-color);
-            transform: rotate(0deg);
-        }
-        
-        .search-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .search-input {
-            width: 70%;
-            padding: 12px;
-            border: 2px solid var(--primary-color);
-            border-radius: 20px 0 0 20px;
-            font-size: 16px;
-            outline: none;
-            transition: all 0.3s;
-        }
-        
-        .search-input:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 8px rgba(106, 76, 255, 0.4);
-        }
-        
-        .search-button {
-            padding: 12px 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 0 20px 20px 0;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        .search-button:hover {
-            background-color: var(--secondary-color);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .categories {
-                grid-template-columns: 1fr;
-            }
-            
-            .links {
-                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-            }
-            
-            .link-icon {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .search-container {
-                margin-left: 10%;
-                margin-right: 10%;
-            }
-            
-            .search-input {
-                width: 60%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-            
-            header {
-                padding: 20px 10px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .menu-selector {
-                top: 10px;
-                right: 10px;
-            }
-            
-            .search-container {
-                margin-left: 5%;
-                margin-right: 5%;
-            }
-            
-            .search-form {
-                flex-direction: column;
-            }
-            
-            .search-input {
-                width: 100%;
-                border-radius: 20px;
-                margin-bottom: 10px;
-            }
-            
-            .search-button {
-                width: 100%;
-                border-radius: 20px;
-            }
-        }
-    </style>
-
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="menu-selector">
-        <div class="dropdown">
-            <img src="./img/timnetworks.jpg" alt="Menu" class="link-icon" id="dropdown-btn" style="cursor:pointer;">
-            <div id="dropdown-menu" class="dropdown-content">
-                <a target="_blank" href="https://timnetworks.com">🤌 timnetworks</a>
-                <a target="_blank" href="https://github.com/timnetworks">👉 github project</a>
-                <a href="javascript:void(0)" class="close-btn" onclick="toggleDropdown()">close</a>
-            </div>
-        </div>
-    </div>
 
+    <!-- Header Bar -->
+    <header class="header-bar">
+        <a href="https://timnetworks.org" target="_blank" class="header-link icon">
+            <img src="./res/apps/32/preferences-desktop-remote-desktop.png" alt="TimNetworks">
+        </a>
+        
+        <form class="search-container" method="get" action="https://www.google.com/search">
+            <input type="text" name="q" placeholder="Quick Search...">
+            <button type="submit">Google</button>
+        </form>
+        
+        <a href="https://github.com/timnetworks" target="_blank" class="header-link icon">
+            <img src="./res/apps/32/palemoon.png" alt="GitHub">
+        </a>
+    </header>
+    <!--<div id="search-handle" class="handle"></div>-->
 
-
+    <!-- Main Scrollable Content -->
     <div class="container">
-        <header>
-            <div class="search-container">
-                    <form class="search-form" method="get" action="https://www.google.com/search">
-                        <input type="text" class="search-input" name="q" placeholder="quick search">
-                        <button type="submit" class="search-button">google</button>
-                    </form>
-            </div>
-            <img src="./img/hero.gif" alt="Hero Image" class="hero-image">
-            <div id="quote-container" class="quote">
-              <p id="quote-text" style="font-size: 1.2rem; font-style: italic; margin-bottom: 10px;">Loading a random quote...</p>
-              <p id="quote-attribution" style="font-size: 0.9rem; text-align: right; color: #666;"></p>
-            </div>
-        </header>
-
-        <div class="categories">
-            <div class="category general">
-                <h2>General</h2>
-                <div class="links">
-                    <a target="_blank" href="https://mail.google.com/mail/u/0/#all" class="link">
-                        <div class="link-icon">
-                            <img src="./img/gmail.jpg" alt="Gmail">
-                        </div>
-                        <span class="link-title">Gmail</span>
-                    </a>
-                    <a target="_blank" href="https://webmail.timnetworks.org/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/mail.jpg" alt="Webmail">
-                        </div>
-                        <span class="link-title">Webmail</span>
-                    </a>
-                    <a target="_blank" href="https://timnetworks.com/misc/directory/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/directory.jpg" alt="Directory">
-                        </div>
-                        <span class="link-title">Directory</span>
-                    </a>
-                    <a target="_blank" href="https://timnetworks.com/misc/documents/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/file.jpg" alt="Documents">
-                        </div>
-                        <span class="link-title">Documents</span>
-                    </a>
-                    <a target="_blank" href="https://maps.google.com" class="link">
-                        <div class="link-icon">
-                            <img src="./img/map.jpg" alt="Maps">
-                        </div>
-                        <span class="link-title">Maps</span>
-                    </a>
-                    <a target="_blank" href="https://portal.office.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/office.jpg" alt="Office">
-                        </div>
-                        <span class="link-title">Office</span>
-                    </a>
-                    <a target="_blank" href="https://timnetworks.org/desktop/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/remotedesktop.jpg" alt="Remote Desktop">
-                        </div>
-                        <span class="link-title">RDP</span>
-                    </a>            
+        <main class="content-grid">
+            
+            <!-- General Window -->
+            <div class="window">
+                <div class="title-bar">
+                    <div class="title-bar-text">General</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div class="links">
+                        <a target="_blank" href="https://mail.google.com/mail/u/0/#all" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/evolution.png" alt="Gmail"></div>
+                            <span class="link-title">Gmail</span>
+                        </a>
+                        <a target="_blank" href="https://webmail.timnetworks.org/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/internet-mail.png" alt="Webmail"></div>
+                            <span class="link-title">Webmail</span>
+                        </a>
+                        <a target="_blank" href="https://timnetworks.com/misc/directory/" class="link">
+                            <div class="link-icon"><img src="./res/places/32/folder-publicshare.png" alt="Directory"></div>
+                            <span class="link-title">Directory</span>
+                        </a>
+                        <a target="_blank" href="https://timnetworks.com/misc/documents/" class="link">
+                            <div class="link-icon"><img src="./res/actions/32/system-search.png" alt="Documents"></div>
+                            <span class="link-title">Documents</span>
+                        </a>
+                        <a target="_blank" href="https://blog.timnetworks.net" class="link">
+                            <div class="link-icon"><img src="./res/places/32/user-home.png" alt="Weblog"></div>
+                            <span class="link-title">Web Log</span>
+                        </a>
+                        <a target="_blank" href="https://maps.google.com" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/softwarecenter.png" alt="Maps"></div>
+                            <span class="link-title">Maps</span>
+                        </a>
+                        <a target="_blank" href="https://simsubs.timnetworks.net/" class="link">
+                            <div class="link-icon"><img src="./res/status/32/dialog-information.png" alt="Subway Status"></div>
+                            <span class="link-title">Subway Status</span>
+                        </a>
+                        <a target="_blank" href="https://timnetworks.org/desktop/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/gksu-root-terminal-old.png" alt="Remote Desktop"></div>
+                            <span class="link-title">RDP</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="category news">
-                <h2>News</h2>
-                <div class="links">
-                    <a target="_blank" href="https://www.boringreport.org/app" class="link">
-                        <div class="link-icon">
-                            <img src="./img/news.jpg" alt="Boring Report">
-                        </div>
-                        <span class="link-title">Boring Report</span>
-                    </a>
-                    <a target="_blank" href="http://68k.news" class="link">
-                        <div class="link-icon">
-                            <img src="./img/68knews.jpg" alt="68k News">
-                        </div>
-                        <span class="link-title">68k News</span>
-                    </a>
-                    <a target="_blank" href="https://theregister.co.uk/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/register.jpg" alt="The Register">
-                        </div>
-                        <span class="link-title">The Register</span>
-                    </a>
-                    <a target="_blank" href="https://news.ycombinator.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/ycomb.jpg" alt="Hacker News">
-                        </div>
-                        <span class="link-title">Hacker News</span>
-                    </a>
-                    <a target="_blank" href="https://devops-scanner.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/devops.jpg" alt="DevOps Scanner">
-                        </div>
-                        <span class="link-title">DevOps Scanner</span>
-                    </a>
-                    <a target="_blank" href="https://netblocks.org/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/netblocks.jpg" alt="Net Blocks">
-                        </div>
-                        <span class="link-title">Net Blocks</span>
-                    </a>
-                    <a target="_blank" href="https://citizen.com/explore" class="link">
-                        <div class="link-icon">
-                            <img src="./img/citizen.jpg" alt="Citizen">
-                        </div>
-                        <span class="link-title">Citizen</span>
-                    </a>
-                    <a target="_blank" href="https://forecast.weather.gov/MapClick.php?lat=40.643950000000075&lon=-73.97965999999997#.XaYhHPd7n0o" class="link">
-                        <div class="link-icon">
-                            <img src="./img/weather.jpg" alt="Weather">
-                        </div>
-                        <span class="link-title">Weather</span>
-                    </a>
+            <!-- News Window -->
+            <div class="window">
+                <div class="title-bar">
+                    <div class="title-bar-text">News</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div class="links">
+                         <a target="_blank" href="https://www.boringreport.org/app" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/news-feed.png" alt="Boring Report"></div>
+                            <span class="link-title">Boring Report</span>
+                        </a>
+                        <a target="_blank" href="http://68k.news" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/news-feed.png" alt="68k News"></div>
+                            <span class="link-title">68k News</span>
+                        </a>
+                        <a target="_blank" href="https://theregister.co.uk/" class="link">
+                            <div class="link-icon"><img src="./res/mimes/32/x-office-address-book.png" alt="The Register"></div>
+                            <span class="link-title">The Register</span>
+                        </a>
+                        <a target="_blank" href="https://news.ycombinator.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/user-info.png" alt="Hacker News"></div>
+                            <span class="link-title">Hacker News</span>
+                        </a>
+                        <a target="_blank" href="https://devops-scanner.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/eom.png" alt="DevOps Scanner"></div>
+                            <span class="link-title">DevOps Scanner</span>
+                        </a>
+                        <a target="_blank" href="https://mastodon.social/@netblocks/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/application-community.png" alt="Net Blocks"></div>
+                            <span class="link-title">Net Blocks</span>
+                        </a>
+                        <a target="_blank" href="https://citizen.com/explore" class="link">
+                            <div class="link-icon"><img src="./res/devices/32/pda.png" alt="Citizen"></div>
+                            <span class="link-title">Citizen</span>
+                        </a>
+                        <a target="_blank" href="https://forecast.weather.gov/MapClick.php?lat=40.643950000000075&lon=-73.97965999999997#.XaYhHPd7n0o" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/xfce4-weather.png" alt="Weather"></div>
+                            <span class="link-title">Weather</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="category media">
-                <h2>Media</h2>
-                <div class="links">
-                    <a target="_blank" href="https://music.timnetworks.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/music.jpg" alt="Music">
-                        </div>
-                        <span class="link-title">Music</span>
-                    </a>
-                    <a target="_blank" href="https://play.max.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/hbo.jpg" alt="HBO Max">
-                        </div>
-                        <span class="link-title">HBO Max</span>
-                    </a>
-                    <a target="_blank" href="https://www.netflix.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/netflix.jpg" alt="Netflix">
-                        </div>
-                        <span class="link-title">Netflix</span>
-                    </a>
-                    <a target="_blank" href="https://www.youtube.com/feed/storefront?bp=EgCSAQMI9gOiBQIoBg%3D%3D" class="link">
-                        <div class="link-icon">
-                            <img src="./img/youtube.jpg" alt="YouTube">
-                        </div>
-                        <span class="link-title">YouTube</span>
-                    </a>
-                    <a target="_blank" href="https://archive.org/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/archive.jpg" alt="Archive.org">
-                        </div>
-                        <span class="link-title">Archive</span>
-                    </a>
-                    <a target="_blank" href="https://huggingface.co/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/huggingface.jpg" alt="Hugging Face">
-                        </div>
-                        <span class="link-title">Hugging Face</span>
-                    </a>
-                    <a target="_blank" href="https://drive.timnetworks.net/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/owncloud.jpg" alt="Archive.org">
-                        </div>
-                        <span class="link-title">tnDrive</span>
-                    </a>
-                    <a target="_blank" href="https://www.photopea.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/photopea.jpg" alt="Photopea">
-                        </div>
-                        <span class="link-title">Photopea</span>
-                    </a>
+            <!-- Media Window -->
+            <div class="window">
+                <div class="title-bar">
+                    <div class="title-bar-text">Media</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div class="links">
+                        <a target="_blank" href="https://music.timnetworks.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/multimedia-audio-player.png" alt="Music"></div>
+                            <span class="link-title">Music</span>
+                        </a>
+                        <a target="_blank" href="https://play.max.com/" class="link">
+                            <div class="link-icon"><img src="./res/devices/32/video-display.png" alt="HBO Max"></div>
+                            <span class="link-title">HBO Max</span>
+                        </a>
+                        <a target="_blank" href="https://www.netflix.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/multimedia-video-player.png" alt="Netflix"></div>
+                            <span class="link-title">Netflix</span>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/feed/storefront?bp=EgCSAQMI9gOiBQIoBg%3D%3D" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/youtube.png" alt="YouTube"></div>
+                            <span class="link-title">YouTube</span>
+                        </a>
+                        <a target="_blank" href="https://archive.org/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/archive-manager.png" alt="Archive.org"></div>
+                            <span class="link-title">Archive</span>
+                        </a>
+                        <a target="_blank" href="https://huggingface.co/" class="link">
+                            <div class="link-icon"><img src="./res/emotes/32/huggingface.png" alt="Hugging Face"></div>
+                            <span class="link-title">Hugging Face</span>
+                        </a>
+                        <a target="_blank" href="https://drive.timnetworks.net/" class="link">
+                            <div class="link-icon"><img src="./res/devices/32/drive-harddisk.png" alt="tnDrive"></div>
+                            <span class="link-title">tnDrive</span>
+                        </a>
+                        <a target="_blank" href="https://www.photopea.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/gimp.png" alt="Photopea"></div>
+                            <span class="link-title">Photopea</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Utility Window -->
+            <div class="window">
+                <div class="title-bar">
+                    <div class="title-bar-text">Utility</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div class="links">
+                       <a target="_blank" href="https://www.kitco.com/gold.londonfix.html" class="link">
+                            <div class="link-icon"><img src="./res/mimes/32/x-office-spreadsheet.png" alt="London Fix"></div>
+                            <span class="link-title">London Fix</span>
+                        </a>
+                        <a target="_blank" href="https://bitcoin.sipa.be/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/invest-applet.png" alt="Bitcoin Stats"></div>
+                            <span class="link-title">Bitcoin Stats</span>
+                        </a>
+                        <a target="_blank" href="https://coinmarketcap.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/libreoffice-math.png" alt="CoinMarketCap"></div>
+                            <span class="link-title">CoinMarketCap</span>
+                        </a>
+                        <a target="_blank" href="https://coin360.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/preferences-desktop-wallpaper.png" alt="Coin360"></div>
+                            <span class="link-title">Coin360</span>
+                        </a>
+                        <a target="_blank" href="https://portal.office.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/libreoffice-main.png" alt="Office"></div>
+                            <span class="link-title">Office</span>
+                        </a>
+                        <a target="_blank" href="https://finviz.com/map.ashx?t=sec" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/session-properties.png" alt="Finviz"></div>
+                            <span class="link-title">Finviz</span>
+                        </a>
+                        <a target="_blank" href="https://chat.openai.com/" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/google-hangout.png" alt="ChatGPT"></div>
+                            <span class="link-title">ChatGPT</span>
+                        </a>
+                        <a target="_blank" href="https://claude.ai/new" class="link">
+                            <div class="link-icon"><img src="./res/apps/32/google-hangout.png" alt="Claude"></div>
+                            <span class="link-title">Claude</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="category utility">
-                <h2>Utility</h2>
-                <div class="links">
-                    <a target="_blank" href="https://www.kitco.com/gold.londonfix.html" class="link">
-                        <div class="link-icon">
-                            <img src="./img/goldbar.jpg" alt="London Fix">
-                        </div>
-                        <span class="link-title">London Fix</span>
-                    </a>
-                    <a target="_blank" href="https://bitcoin.sipa.be/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/bitcoin.jpg" alt="Bitcoin Stats">
-                        </div>
-                        <span class="link-title">Bitcoin Stats</span>
-                    </a>
-                    <a target="_blank" href="https://coinmarketcap.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/bitcoinmarketcap.jpg" alt="CoinMarketCap">
-                        </div>
-                        <span class="link-title">Coin Marketcap</span>
-                    </a>
-                    <a target="_blank" href="https://coin360.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/coin360.jpg" alt="Coin360">
-                        </div>
-                        <span class="link-title">Coin360</span>
-                    </a>
-                    <a target="_blank" href="https://finviz.com/map.ashx?t=sec" class="link">
-                        <div class="link-icon">
-                            <img src="./img/finviz.jpg" alt="Finviz">
-                        </div>
-                        <span class="link-title">Finviz</span>
-                    </a>
-                    <a target="_blank" href="https://chat.openai.com/" class="link">
-                        <div class="link-icon">
-                            <img src="./img/chat.jpg" alt="ChatGPT">
-                        </div>
-                        <span class="link-title">ChatGPT</span>
-                    </a>
-                    <a target="_blank" href="https://claude.ai/new" class="link">
-                        <div class="link-icon">
-                            <img src="./img/claude.jpg" alt="Claude">
-                        </div>
-                        <span class="link-title">Claude</span>
-                    </a>
-                <div>
+        </main>
+
+        <!-- Quote Window -->
+        <div class="window quote-window">
+             <div class="title-bar">
+                <div class="title-bar-text">Quote of the Moment</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div id="quote-container" class="window-body" title="Click for another quote">
+                <p id="quote-text">Loading a random quote...</p>
+                <p id="quote-attribution"></p>
             </div>
         </div>
+
     </div>
-</div>
 
+    <script src="script.js"></script>
 </body>
-
-
-
-    <script>
-        // Toggle dropdown menu
-        function toggleDropdown() {
-            document.getElementById("dropdown-menu").classList.toggle("show");
-        }
-
-        // Close dropdown if clicked outside
-        window.onclick = function(event) {
-            if (!event.target.matches('#dropdown-btn') && !event.target.matches('.link-icon')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-
-        // Add dropdown button event listener
-        document.getElementById("dropdown-btn").addEventListener("click", toggleDropdown);
-    </script>
-
-    <script>
-      async function loadRandomQuote() {
-        try {
-          // Fetch the quotes file
-          const response = await fetch('quote.md');
-          if (!response.ok) {
-            throw new Error('Failed to load quotes');
-          }
-          
-          const text = await response.text();
-          
-          // Split by line and filter empty lines
-          const quotes = text.split('\n').filter(quote => quote.trim() !== '');
-          
-          if (quotes.length === 0) {
-            document.getElementById('quote-text').textContent = 'No quotes found.';
-            return;
-          }
-          
-          // Select a random quote
-          const randomIndex = Math.floor(Math.random() * quotes.length);
-          const randomQuote = quotes[randomIndex];
-          
-          // Check if quote has attribution (format: "Quote" - Attribution)
-          const quoteMatch = randomQuote.match(/(.*?)(?:\s*-\s*(.*)|$)/);
-          
-          if (quoteMatch) {
-            const [, quoteText, attribution] = quoteMatch;
-            document.getElementById('quote-text').textContent = quoteText.trim();
-            document.getElementById('quote-attribution').textContent = attribution ? `- ${attribution.trim()}` : '';
-          } else {
-            document.getElementById('quote-text').textContent = randomQuote;
-          }
-        } catch (error) {
-          console.error('Error loading quotes:', error);
-          document.getElementById('quote-text').textContent = '"Could not load quotes." - this webpage';
-        }
-      }
-      
-      // Load a quote when the page loads
-      document.addEventListener('DOMContentLoaded', loadRandomQuote);
-      
-      // Set up to change quote every day (or you can add a refresh button)
-      const quoteContainer = document.getElementById('quote-container');
-      quoteContainer.title = 'Click for another quote';
-      quoteContainer.style.cursor = 'pointer';
-      quoteContainer.addEventListener('click', loadRandomQuote);
-    </script>
 </html>
-
