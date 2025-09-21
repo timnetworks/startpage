@@ -2,9 +2,9 @@
 
 A customizable, fast-loading start page with a nostalgic Windows 98 aesthetic, built with modern web technologies compatible with desktop and mobile usecases. This project uses the excellent [98.css](https://jdan.github.io/98.css/) library and custom styling to recreate the classic desktop experience in a functional, responsive webpage.
 
-
-
 ### [View Live Demo](https://timnetworks.net)
+
+![Screenshot showing the look of the web app](https://github.com/timnetworks/startpage/blob/main/img/screenshot.jpg)
 
 ---
 
